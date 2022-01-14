@@ -1,13 +1,14 @@
 {
   "name": "my-gatsby-site",
   "version": "1.0.0",
+  "license": "UNLISENSED",
   "private": true,
   "description": "My Gatsby Site",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -17,17 +18,21 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "gatsby": "^4.5.1",
+    "gatsby-cli": "^4.5.1",
     "gatsby-plugin-google-analytics": "^4.5.0",
     "gatsby-plugin-image": "^2.5.1",
     "gatsby-plugin-manifest": "^4.5.1",
     "gatsby-plugin-mdx": "^3.5.1",
     "gatsby-plugin-react-helmet": "^5.5.0",
+    "gatsby-plugin-sass": "^5.5.0",
     "gatsby-plugin-sharp": "^4.5.1",
     "gatsby-plugin-sitemap": "^5.5.0",
     "gatsby-source-filesystem": "^4.5.1",
     "gatsby-transformer-sharp": "^4.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "sass": "^1.47.0",
+    "uuid": "^8.3.2"
   }
 }

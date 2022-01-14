@@ -1,13 +1,17 @@
 import * as React from 'react'
-// Step 2: Define your component
+import { Link } from 'gatsby'
+import Layout from '../components/templates/layout'
+import Seo from '../components/templates/seo'
+
 const IndexPage = () => {
   return (
-    <main>
-      <title>Home Page</title>
-      <h1>Welcome to my Gatsby site!</h1>
+    <Layout pageTitle="ホームページ">
+      <Seo title="ホームページ" description="プログラミング・情報系の知識に関する日頃の疑問を解消し、このブログで皆さんにお伝えします。" />
       <p>I'm making this by following the Gatsby Tutorial.</p>
-    </main>
+      <Link href='http://localhost:8000/___graphql'>graphql</Link>
+
+    </Layout>
   )
 }
-// Step 3: Export your component
+
 export default IndexPage
