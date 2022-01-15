@@ -6,10 +6,9 @@ import Seo from '../components/templates/seo'
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <Seo title="ホームページ" description="プログラミング・情報系の知識に関する日頃の疑問を解消し、このブログで皆さんにお伝えします。" />
+      <Seo title="記事一覧" description="プログラミング・情報系の知識に関する記事です。" />
 
-
-      <Link to='/___graphql'>graphql</Link>
+      <Link to='http://localhost:8000/___graphql'>graphql</Link>
 
     </Layout>
   )

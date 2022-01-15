@@ -21,14 +21,12 @@ const Seo = ({ title, description, article }) => {
     description: description || defaultDescription,
     url: `${siteUrl}${pathname}`,
     twitter: social.twitter,
-    qiita: social.qiita,
-    github: social.github
   }
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <html lang="ja" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1 ,viewport-fit=cover" />
 
       <meta name="description" content={seo.description} />
