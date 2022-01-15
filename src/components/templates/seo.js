@@ -70,7 +70,7 @@ Seo.defaultProps = {
 
 
 const query = graphql`
-  query SEO {
+  query Seo {
     site {
       siteMetadata {
         defaultTitle
