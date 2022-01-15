@@ -1,14 +1,14 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/templates/layout'
-import Seo from '../components/templates/seo'
+import Layout from '../components/templates/Layout'
+import Seo from '../components/templates/Seo'
 
-const IndexPage = ({ data }) => {
+const BlogsPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="記事一覧" description="プログラミング・情報系の知識に関する記事です。" />
 
-      <Link to='http://localhost:8000/___graphql'>graphql</Link>
+      <Link to='/___graphql'>graphql</Link>
 
     </Layout>
   )
@@ -27,4 +27,4 @@ export const query = graphql` {
 }
 `
 
-export default IndexPage
+export default BlogsPage

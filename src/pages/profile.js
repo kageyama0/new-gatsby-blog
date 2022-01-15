@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-const AboutPage = () => {
+const ProfilePage = () => {
   return (
     <main>
       <title>About Me</title>
@@ -10,4 +10,4 @@ const AboutPage = () => {
     </main>
   )
 }
-export default AboutPage
+export default ProfilePage

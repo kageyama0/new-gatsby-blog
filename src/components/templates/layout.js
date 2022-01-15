@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Header from '../organisms/header'
-import Footer from '../organisms/footer'
+import Header from '../organisms/Header'
+import Footer from '../organisms/Footer'
 
 const Layout = ({ children }) => {
   return (

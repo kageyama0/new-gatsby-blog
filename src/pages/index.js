@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/templates/layout'
-import Seo from '../components/templates/seo'
+import Layout from '../components/templates/Layout'
+import Seo from '../components/templates/Seo'
 
 const IndexPage = ({ data }) => {
   return (
