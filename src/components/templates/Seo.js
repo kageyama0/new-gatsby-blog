@@ -69,22 +69,21 @@ Seo.defaultProps = {
 }
 
 
-const query = graphql`
-  query Seo {
-    site {
-      siteMetadata {
-        defaultTitle
-        titleTemplate
-        defaultDescription
-        siteUrl
-        author {
-          name
-          summary
-        }
-        social{
-          twitter
-        }
+export const query = graphql` {
+  site {
+    siteMetadata {
+      author {
+        name
+        summary
       }
+      defaultTitle
+      description
+      social {
+        twitter
+      }
+      siteUrl
+      titleTemplate
     }
   }
+}
 `
