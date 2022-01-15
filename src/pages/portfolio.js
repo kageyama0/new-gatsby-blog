@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import Layout from '../components/templates/Layout'
 import Seo from '../components/templates/Seo'
 
-const PortfolioPage = ({ data }) => {
+const PortfolioPage = () => {
   return (
     <Layout>
       <Seo title="ポートフォリオ一覧" description="プログラミング・情報系の知識に関する記事です。" />
@@ -13,18 +13,5 @@ const PortfolioPage = ({ data }) => {
     </Layout>
   )
 }
-
-export const query = graphql` {
-  allMdx(sort: {fields: frontmatter___date, order: DESC}) {
-    nodes {
-      frontmatter {
-        title
-        date(formatString: "MMMM D, YYYY")
-      }
-      slug
-    }
-  }
-}
-`
 
 export default PortfolioPage
