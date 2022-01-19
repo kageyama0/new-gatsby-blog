@@ -1,27 +1,27 @@
 import React from "react"
-
 import {
   Box,
   Stack,
   Flex,
   Text,
   useDisclosure
-} from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+} from "@chakra-ui/react"
+import { HamburgerIcon } from "@chakra-ui/icons"
 import Link from "../atoms/link"
 
-const Header = (props) => {
+const NavLink = ({ ...props }) => (
+  <Link
+    rounded="base"
+    display="block"
+    _hover={{ bg: "teal.200" }}
+    p={2}
+    {...props}
+  />
+)
+
+const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleToggle = () => (isOpen ? onClose() : onOpen());
-  const NavLink = (props) => (
-    <Link
-      rounded="base"
-      display="block"
-      _hover={{ bg: "teal.200" }}
-      p={2}
-      {...props}
-    />
-  )
 
   return (
     <Flex
@@ -32,7 +32,6 @@ const Header = (props) => {
       padding={6}
       bg="primary"
       color="white"
-      {...props}
     >
       <Flex align="center" mr={5}>
         <Text as="a" href="/" fontSize="2xl" fontWeight="bold" letterSpacing={"tighter"} textDecoration="none">

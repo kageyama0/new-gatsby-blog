@@ -9,7 +9,10 @@ const Footer = () => (
     role="contentinfo"
     width="100%"
     textAlign="center"
+    borderTop="1px"
+    borderTopColor="gray.200"
     mx="auto"
+    my="8"
     maxW="7xl"
     py="12"
     px={{ base: '4', md: '8' }}

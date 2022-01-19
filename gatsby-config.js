@@ -33,7 +33,7 @@ module.exports = {
     // SEO用プラグイン, https://www.gatsbyjs.com/docs/add-page-metadata/
     "gatsby-plugin-react-helmet",
 
-    // ブログ関連のファイルを読み込むためのプラグイン
+    // ファイルを読み込むためのプラグイン、ここではブログ関連のファイルを読み込んでいる。
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -45,7 +45,7 @@ module.exports = {
     // mdx形式のファイル　gatsbyjs.com/docs/tutorial/part-5/#task-install-and-configure-the-mdx-transformer-plugin-and-dependencies
     "gatsby-plugin-mdx",
 
-    // mdxファイルを変換して、記事にしたときに
+    // mdxファイルを変換して、記事にしたときにコードをハイライトするためのもの。
     {
       resolve: `gatsby-transformer-remark`,
       options: {
