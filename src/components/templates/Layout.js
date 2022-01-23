@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     <Box bg="background">
       <Header />
 
-      <main>
+      <main margin="1rem auto">
         <Grid
           templateColumns={{ base: "1fr", md: "5fr minmax(180px, 2fr)"}}
           gap={{ base: "0", md: "6" }}

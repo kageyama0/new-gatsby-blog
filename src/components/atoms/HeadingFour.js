@@ -2,7 +2,7 @@ import * as React from 'react'
 import {Heading} from "@chakra-ui/react"
 
 
-const ProfileHeadingFour = ({ title }) => (
+const HeadingFour = ({ title }) => (
   <Heading
     as="h4"
     position="relative"
@@ -39,4 +39,4 @@ const ProfileHeadingFour = ({ title }) => (
   </Heading>
 )
 
-export default ProfileHeadingFour
+export default HeadingFour

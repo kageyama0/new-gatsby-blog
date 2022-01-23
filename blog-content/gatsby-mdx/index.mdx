@@ -1,0 +1,41 @@
+---
+title: "Gatsby.jsのgatsby-plugins-mdxに関して"
+date: "2022-01-14"
+update: "2022-01-15"
+thumbnail: ./gatsby-icon.png
+thumbnail_alt: "Gatsby icon"
+---
+
+
+## markdownファイルを記事に変換する
+
+[https://www.gatsbyjs.com/docs/tutorial/part-4/#task-use-graphiql-to-build-the-query-1](https://www.gatsbyjs.com/docs/tutorial/part-4/#task-use-graphiql-to-build-the-query-1)
+
+```js
+  {
+    resolve: "gatsby-source-filesystem",
+    options: {
+      name: `blog`,
+      path: `${__dirname}/blog-content`,
+    }
+  },
+```
+
+- __dirname
+
+    Node.js の変数で、現在実行されているファイルを含むディレクトリの絶対パスを格納します)。
+
+    Node.jsの変数ってこういう風に使えるんだ。
+
+    このファイルはnode.jsで動かされるファイルなんだ。
+
+
+[https://www.gatsbyjs.com/docs/tutorial/part-5/](https://www.gatsbyjs.com/docs/tutorial/part-5/)
+
+- トランスフォーマープラグイン
+    - gatsby-plugins-mdxは、トランスフォーマープラグインと呼ばれるものの１つである。
+        - 拡張子が .mdx の File ノードを、GraphQL を使用してクエリできる別のフィールドセットを持つ MDX ノードに変換します。
+        - ソース プラグインで作成されたノードの生データを操作して、必要な構造や形式に変換することができます。
+    - トランスフォーマープラグインは、ノードをあるタイプから別のタイプに変換する
+        - データレイヤーの内部では、情報はノードと呼ばれるオブジェクトに格納されます。
+        - ノードはデータレイヤーにおけるデータの最小形態単位です。

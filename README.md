@@ -15,7 +15,7 @@
 2.  **起動する**  
 
     ```shell
-    yarn run dev
+    yarn dev
     ```
 
     http://localhost:8000 にアクセス

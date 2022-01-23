@@ -8,8 +8,8 @@ import {
 
 import Layout from "../components/templates/Layout"
 import Seo from "../components/templates/Seo"
-import ProfileHeadingTwo from '../components/atoms/ProfileHeadingTwo'
-import ProfileHeadingFour from '../components/atoms/ProfileHeadingFour'
+import HeadingTwo from '../components/atoms/HeadingTwo'
+import HeadingFour from '../components/atoms/HeadingFour'
 import AccordionSet from '../components/molecules/AccordionSet'
 
 
@@ -33,14 +33,14 @@ const ProfilePage = () => {
           プロフィール
         </Heading>
 
-        <ProfileHeadingTwo title="スキル" />
+        <HeadingTwo title="スキル" />
         <ProfileBox>
-          <ProfileHeadingFour title="プログラミング言語" />
+          <HeadingFour title="プログラミング言語" />
           <Box></Box>
         </ProfileBox>
 
 
-        <ProfileHeadingTwo title="趣味(おまけ)" />
+        <HeadingTwo title="趣味(おまけ)" />
         <ProfileBox>
           <Accordion allowMultiple>
 

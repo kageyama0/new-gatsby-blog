@@ -7,7 +7,7 @@ import {
   useDisclosure
 } from "@chakra-ui/react"
 import { HamburgerIcon } from "@chakra-ui/icons"
-import Link from "../atoms/link"
+import Link from "../atoms/Link"
 
 const NavLink = ({ ...props }) => (
   <Link

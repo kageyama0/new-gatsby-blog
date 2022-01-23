@@ -2,21 +2,31 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/templates/Layout'
+import HeadingTwo from "../../components/atoms/HeadingTwo"
+import { Box } from "@chakra-ui/react"
+
 
 const ArticleDetail = ({ data }) => {
   return (
     <Layout>
       <article>
-        <h1>{data.mdx.frontmatter.title}</h1>
+        <HeadingTwo title={data.mdx.frontmatter.title} />
+        <Box paddingLeft={{ md:"2rem"}}>
+          <Box>
+            <Box color="gray">
+              作成日 : {data.mdx.frontmatter.date}
+            </Box>
+            {data.mdx.frontmatter.update &&
+              <Box color="gray">
+                更新日 : {data.mdx.frontmatter.update}
+              </Box>
+            }
+          </Box>
 
-        <div>
-          <div>作成日 : {data.mdx.frontmatter.date}</div>
-          {data.mdx.frontmatter.update && <div>更新日 : {data.mdx.frontmatter.update}</div>}
-        </div>
-
-        <MDXRenderer>
-          {data.mdx.body}
-        </MDXRenderer>
+          <MDXRenderer>
+            {data.mdx.body}
+          </MDXRenderer>
+        </Box>
       </article>
     </Layout>
   )

@@ -3,7 +3,7 @@ module.exports = {
     defaultTitle: "技術ブログ(仮)",
     titleTemplate:  "%s | kageyama0",
     defaultDescription: "Gatsbyで作成したブログです。",
-    siteUrl: `https://20376.gatsbyjs.io/`,
+    siteUrl: `https://kageyama0.com/`,
     author: {
       name: "kageyama0",
       summary: "駆け出しエンジニア",
@@ -17,9 +17,29 @@ module.exports = {
   },
 
   plugins: [
-    //画像用プラグイン, https://www.gatsbyjs.com/docs/tutorial/part-3/
+    //画像用プラグイン, https://www.gatsbyjs.com/plugins/gatsby-plugin-image
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+      },
+    },
+
+    // アイコン用プラグイン, https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        icon: `src/images/favicon.png`,
+        start_url: `/`,
+        display: `standalone`,
+      },
+    },
+
 
     // ChakraUIを使うためのプラグイン, https://chakra-ui.com/guides/integrations/with-gatsby
     {
@@ -83,6 +103,30 @@ module.exports = {
           }
         ]
       }
+    },
+
+    {
+      resolve: 'gatsby-plugin-htaccess',
+      options: {
+        RewriteBase: '/',
+        https: true,
+        www: true,
+        SymLinksIfOwnerMatch: true,
+        host: 'www.kageyama0.com', // if 'www' is set to 'false', be sure to also remove it here!
+        ErrorDocument: `
+          ErrorDocument 404 /404/index.html
+        `,
+        redirect: [
+          {
+            from: 'kgeyama0.com/',
+            to: 'www.kageyama0.com',
+          },
+        ],
+        custom: `
+            # This is a custom rule!
+            # This is a another custom rule!
+        `,
+      },
     },
   ],
 }

@@ -4,7 +4,7 @@ import ArticleCard from '../molecules/ArticleCard'
 
 
 
-const ArticleCards = () => {
+const ArticleCards = ({ data }) => {
   const dataList = [
     {
       id: "1",
@@ -28,15 +28,14 @@ const ArticleCards = () => {
   ]
   return (
       <Container maxW="80rem" centerContent>
-        <SimpleGrid columns={[1, 2, 1, 2]}>
-          {dataList.map(function (data) {
-            const { id, product, summary, longLine } = data;
+        <SimpleGrid minWidth="10rem">
+          {dataList.map((data) =>{
+            const { id, title, date, image } = data;
             return (
               <ArticleCard
                 key={id}
-                product={product}
-                summary={summary}
-                longLine={longLine}
+                title={title}
+                date={date}
               />
             );
           })}
