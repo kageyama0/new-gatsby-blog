@@ -12,13 +12,16 @@ const Layout = ({ children }) => {
 
       <main margin="1rem auto">
         <Grid
-          templateColumns={{ base: "1fr", md: "5fr minmax(180px, 2fr)"}}
+          templateColumns={{ base: "1fr", lg: "5fr minmax(180px, 2fr)"}}
           gap={{ base: "0", md: "6" }}
         >
-          <GridItem p="8">
+          <GridItem
+            padding={{ base: "1rem", md:"2rem"}}
+            maxWidth="60rem"
+          >
             {children}
           </GridItem>
-          <GridItem p="2">
+          <GridItem padding="2">
             <Sidebar />
           </GridItem>
         </Grid>

@@ -32,6 +32,7 @@ const Header = () => {
       padding={6}
       bg="primary"
       color="white"
+      width="100%"
     >
       <Flex align="center" mr={5}>
         <Text as="a" href="/" fontSize="2xl" fontWeight="bold" letterSpacing={"tighter"} textDecoration="none">
