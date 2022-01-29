@@ -1,8 +1,16 @@
 import React from "react"
+import Bio from "../molecules/Bio"
+import { Box } from "@chakra-ui/react"
+
 
 const Sidebar = () => {
   return (
-    <div>サイドバー</div>
+    <Box
+      marginRight="1rem"
+    >
+      <Bio />
+
+    </Box>
   )
 
 }

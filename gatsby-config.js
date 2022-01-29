@@ -10,7 +10,7 @@ module.exports = {
     },
     keywords:"ブログ, エンジニア,駆け出しエンジニア",
     social: {
-      twitter:"@ka4maa",
+      twitter:"@kageyama0z",
       qiita:  "kageyama0",
       github: "kageyama0",
     },

@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "../atoms/Link"
-import Image from "../atoms/Image"
+import DynamicImage from "../atoms/DynamicImage"
 import { getImage } from  "gatsby-plugin-image"
 
 import {
@@ -20,7 +20,7 @@ const ArticleCard = ({ title, slug, thumbnail, alt }) => {
         <Flex
           direction="column"
         >
-          <Image
+          <DynamicImage
             aspectRatio={16/9}
             image={image}
             alt={alt}

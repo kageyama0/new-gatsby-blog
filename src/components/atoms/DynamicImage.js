@@ -1,12 +1,11 @@
-// Gatsbyでchakra uiを使う際に、Imageを as={GatsbyImage}として扱う必要がある。はず。。。
-
+// Chakra uiを使う中で、GatsbyのGatsbyImageを使いたい場合、as={ GatsbyImage } として扱う必要がある.
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { AspectRatio, Image as ChakraImage} from "@chakra-ui/react"
 
-const Image = ({ maxWidth, aspectRatio, image, alt,  children, ...props }) => {
+const DynamicImage = ({ aspectRatio, image, alt,  ...props }) => {
   return (
-    <AspectRatio maxWidth={maxWidth} ratio={aspectRatio}>
+    <AspectRatio ratio={aspectRatio}>
       <ChakraImage
         as={GatsbyImage}
         image={image}
@@ -17,4 +16,4 @@ const Image = ({ maxWidth, aspectRatio, image, alt,  children, ...props }) => {
   )
 }
 
-export default Image
+export default DynamicImage

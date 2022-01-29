@@ -16,12 +16,15 @@ const Layout = ({ children }) => {
           gap={{ base: "0", md: "6" }}
         >
           <GridItem
-            padding={{ base: "1rem", md:"2rem"}}
+            padding={{ base: "1rem 0.4rem", md: "2rem 0.5rem" }}
+            margin="auto"
             maxWidth="60rem"
           >
             {children}
           </GridItem>
-          <GridItem padding="2">
+          <GridItem
+            padding={{ base: "1rem 0.4rem", md: "2rem 0.5rem" }}
+          >
             <Sidebar />
           </GridItem>
         </Grid>
