@@ -9,7 +9,7 @@ import {
 import Layout from "../components/templates/Layout"
 import Seo from "../components/templates/Seo"
 import HeadingTwo from '../components/atoms/HeadingTwo'
-import HeadingFour from '../components/atoms/HeadingFour'
+import HeadingThree from '../components/atoms/HeadingThree'
 import AccordionSet from '../components/molecules/AccordionSet'
 
 
@@ -21,22 +21,24 @@ const ProfilePage = () => {
     <Layout>
       <Seo title="プロフィール" description="プログラミング・情報系の知識に関する日頃の疑問を解消し、このブログで皆さんにお伝えします。" />
 
-      <Box h="1000px" bg="white" >
+      <Box
+        bg="white"
+        padding="3.0rem 1.0rem 6.0rem"
+      >
         <Heading
           as="h1"
           size="xl"
           textAlign="center"
           color="gray.400"
-          mt="2.0rem"
-          pt="2.0rem"
+          paddingTop="2.0rem"
         >
           プロフィール
         </Heading>
 
         <HeadingTwo title="スキル" />
         <ProfileBox>
-          <HeadingFour title="プログラミング言語" />
-          <Box></Box>
+          <HeadingThree title="プログラミング言語" />
+          <Box>Python/Javascript</Box>
         </ProfileBox>
 
 
@@ -47,7 +49,9 @@ const ProfilePage = () => {
             <AccordionSet title="外食">
               <Text>大阪に住んでいるので、大阪のいろんな店を開拓してます。</Text>
               <Text>特に、焼肉・焼き鳥・寿司が大好きで、よく新規開拓してます。</Text>
-              <Text>結構美味しいお店知ってるつもりなので、気になる方いればぜひ聞いてください。</Text>
+              <Text>
+                結構美味しいお店知ってるつもりなので、気になる方いればぜひ聞いてください。
+              </Text>
             </AccordionSet>
 
             <AccordionSet title="料理">

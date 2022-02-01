@@ -11,18 +11,20 @@ const Bio = () => {
 
   return (
     <Box
+      maxWidth="320px"
+      margin="auto"
       backgroundColor="white"
     >
       <Image
-        width="320px"
-        height="150px"
+        width="100%"
+        height="auto"
         src={ScenaryImage}
         alt="風景画像"
       />
 
       <Box
-        width="40%"
-        margin="-3.7rem auto"
+        width={{ base: "80px", md: "130px" }}
+        margin={{ base: "-1.7rem auto", md: "-3.7rem auto" }}
       >
         <Image
           borderRadius="full"
@@ -34,9 +36,11 @@ const Bio = () => {
       </Box>
 
 
-      <Box padding="60px 10px 20px">
+      <Box
+        textAlign="center"
+        padding="60px 10px 20px"
+      >
         <Box
-          textAlign="center"
           fontSize="1.2rem"
         >
           kageyama

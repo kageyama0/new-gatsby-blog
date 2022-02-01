@@ -1,4 +1,4 @@
-require("prismjs/themes/prism-dark.css")
+require("prismjs/themes/prism-twilight.css")
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")
 
 //import "typeface-montserrat"

@@ -1,10 +1,13 @@
 import * as React from 'react'
+import { MDXProvider } from "@mdx-js/react"
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/templates/Layout'
 import { Box, Heading } from "@chakra-ui/react"
 
-import "./mdx.module.css"
+import HeadingTwo from "../../components/atoms/HeadingTwo"
+import HeadingThree from "../../components/atoms/HeadingThree"
+
 
 
 const ArticleDetail = ({ data }) => {
@@ -33,9 +36,19 @@ const ArticleDetail = ({ data }) => {
               }
             </Box>
 
-            <MDXRenderer>
-              {data.mdx.body}
-            </MDXRenderer>
+            
+            <Box padding="1rem">
+              <MDXProvider
+                components={{
+                  h2: props => <HeadingTwo title={props.children} />,
+                  h3: props => <HeadingThree title={props.children} />,
+                }}
+              >
+                <MDXRenderer>
+                  {data.mdx.body}
+                </MDXRenderer>
+              </MDXProvider>
+            </Box>
           </Box>
         </Box>
 

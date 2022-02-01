@@ -2,12 +2,12 @@ import * as React from 'react'
 import {Heading} from "@chakra-ui/react"
 
 
-const HeadingFour = ({ title }) => (
+const HeadingThree = ({ title }) => (
   <Heading
     as="h4"
     position="relative"
-    fontSize="2xl"
-    m={{ base: "1.0rem 0.6rem ", md: "2.0rem 0.0rem 1.2rem" }}
+    fontSize={{ base: "xl", md: "2xl" }}
+    m={{ base: "1.0rem 0 0.6rem ", md: "2.0rem 0 1.2rem" }}
     pb="0.3rem"
     lineHeight="1.5rem"
     _before={{
@@ -39,4 +39,4 @@ const HeadingFour = ({ title }) => (
   </Heading>
 )
 
-export default HeadingFour
+export default HeadingThree

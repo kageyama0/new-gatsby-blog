@@ -62,71 +62,31 @@ module.exports = {
       }
     },
 
-    // mdx形式のファイル　gatsbyjs.com/docs/tutorial/part-5/#task-install-and-configure-the-mdx-transformer-plugin-and-dependencies
-    "gatsby-plugin-mdx",
-
-    // mdxファイルを変換して、記事にしたときにコードをハイライトするためのもの。
+    // mdx形式のファイル
+    // https://www.gatsbyjs.com/blog/2019-11-21-how-to-convert-an-existing-gatsby-blog-to-use-mdx/
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins:[
-          `gatsby-remark-code-titles`,
+        extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-images`,
             options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {},
-              showLineNumbers: true,
-              noInlineHighlight: false,
-              languageExtensions: [
-                {
-                  language: "superscript",
-                  extend: "javascript",
-                  definition: {
-                    superscript_types: /(SuperType)/,
-                  },
-                  insertBefore: {
-                    function: {
-                      superscript_keywords: /(superif|superelse)/,
-                    },
-                  },
-                },
-              ],
-              prompt: {
-                user: "root",
-                host: "localhost",
-                global: false,
-              },
-              escapeEntities: {},
-            }
-          }
-        ]
-      }
-    },
-
-    {
-      resolve: 'gatsby-plugin-htaccess',
-      options: {
-        RewriteBase: '/',
-        https: true,
-        www: true,
-        SymLinksIfOwnerMatch: true,
-        host: 'www.kageyama0.com', // if 'www' is set to 'false', be sure to also remove it here!
-        ErrorDocument: `
-          ErrorDocument 404 /404/index.html
-        `,
-        redirect: [
-          {
-            from: 'kgeyama0.com/',
-            to: 'www.kageyama0.com',
+              maxWidth: 590,
+            },
           },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
         ],
-        custom: `
-            # This is a custom rule!
-            # This is a another custom rule!
-        `,
       },
     },
+
   ],
 }

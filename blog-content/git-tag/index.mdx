@@ -7,7 +7,7 @@ thumbnail_alt: "git tag"
 
 ## エラーに遭遇した状況
 下記の通りブランチ名をtagにして作業をしていた。
-```
+```bash
  $ git branch
  develop
 * tag
@@ -15,11 +15,11 @@ thumbnail_alt: "git tag"
 
 ## やったこと & 遭遇したエラー
 
-```
-$ git add -A
-$ git commit -m "comment"
-$ git push origin tag
-fatal: tag shorthand without <tag>
+```terminal
+  $ git add -A
+  $ git commit -m "comment"
+  $ git push origin tag
+  fatal: tag shorthand without <tag>
 ```
 
 コードを描き終えたので、add -> commit -> pushしようとしたらエラーが!
@@ -28,11 +28,12 @@ fatal: tag shorthand without <tag>
 ## 解決方法
 
 tag-functionというブランチを新たに作ってpushした
-```
-$ git checkout -b tag-function
-$ git add -A
-$ git commit -m "comment"
-$ git push origin tag-function
+
+```javascript
+  $ git checkout -b tag-function
+  $ git add -A
+  $ git commit -m "comment"
+  $ git push origin tag-function
 ```
 
 ## 備忘録
@@ -52,20 +53,20 @@ $ git push origin tag-function
 
   - 最新のcommitにタグとコメントを付ける
 
-  ```
-  $ git tag -a <tag-name> -m "comment"
-  ```
+    ```
+    $ git tag -a <tag-name> -m "comment"
+    ```
 
   - 最新でないcommitにもタグ付けできる。
 
-  ```
-  $ git tag -a <tag-name> <commit-hash> -m "message"
-  ```
+    ```
+    $ git tag -a <tag-name> <commit-hash> -m "message"
+    ```
 
 ここだけの話、**コミットID**が何か分からないという方は、下記のコマンドを打ってみてください。
 
 ```
-git log
+$ git log
 ```
 
 logの一番上にある文字列がcommit commit idです。
