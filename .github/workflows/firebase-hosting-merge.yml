@@ -11,10 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          REPOSITORY_AUTHORIZATION="$(echo -n <パーソナルアクセストークン>:x-oauth-basic | base64)"
-          git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $REPOSITORY_AUTHORIZATION"
-      - run: yarn install
       - run: yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
