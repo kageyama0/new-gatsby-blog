@@ -1,17 +1,17 @@
 module.exports = {
   siteMetadata: {
     defaultTitle: "技術ブログ(仮)",
-    titleTemplate:  "%s | kageyama0",
+    titleTemplate: "%s | kageyama0",
     defaultDescription: "Gatsbyで作成したブログです。",
     siteUrl: `https://kageyama0.com/`,
     author: {
       name: "kageyama0",
       summary: "駆け出しエンジニア",
     },
-    keywords:"ブログ, エンジニア,駆け出しエンジニア",
+    keywords: "ブログ, エンジニア,駆け出しエンジニア",
     social: {
-      twitter:"@kageyama0z",
-      qiita:  "kageyama0",
+      twitter: "@kageyama0z",
+      qiita: "kageyama0",
       github: "kageyama0",
     },
   },
@@ -88,22 +88,19 @@ module.exports = {
       },
     },
 
-    // google-analytics
+    // google-analytics用の設定、https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: "G-50E2BE9PW4",
-        head: false,
-        anonymize: true,
-        respectDNT: true,
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        pageTransitionDelay: 0,
-        defer: false,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "kageyama.com",
-        enableWebVitalsTracking: true,
-      },
-    }
+        trackingIds: [
+          "G-50E2BE9PW4"
+        ],
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+        },
+      }
+    },
   ],
 }
