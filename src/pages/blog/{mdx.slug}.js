@@ -7,7 +7,9 @@ import { Box, Heading } from "@chakra-ui/react"
 
 import HeadingTwo from "../../components/atoms/HeadingTwo"
 import HeadingThree from "../../components/atoms/HeadingThree"
+import { Link } from '@chakra-ui/react'
 
+import "./mdx.module.css"
 
 
 const ArticleDetail = ({ data }) => {
@@ -36,12 +38,13 @@ const ArticleDetail = ({ data }) => {
               }
             </Box>
 
-            
+
             <Box padding="1rem">
               <MDXProvider
                 components={{
                   h2: props => <HeadingTwo title={props.children} />,
                   h3: props => <HeadingThree title={props.children} />,
+                  a: props => <Link color="blue" href={props.children}>{props.children}</Link>,
                 }}
               >
                 <MDXRenderer>

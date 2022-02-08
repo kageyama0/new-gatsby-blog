@@ -88,5 +88,22 @@ module.exports = {
       },
     },
 
+    // google-analytics
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-50E2BE9PW4",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        pageTransitionDelay: 0,
+        defer: false,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "kageyama.com",
+        enableWebVitalsTracking: true,
+      },
+    }
   ],
 }
