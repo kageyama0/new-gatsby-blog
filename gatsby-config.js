@@ -62,7 +62,7 @@ module.exports = {
       }
     },
 
-    // mdx形式のファイル
+    // mdx形式のファイルを変換する時の設定
     // https://www.gatsbyjs.com/blog/2019-11-21-how-to-convert-an-existing-gatsby-blog-to-use-mdx/
     {
       resolve: `gatsby-plugin-mdx`,
