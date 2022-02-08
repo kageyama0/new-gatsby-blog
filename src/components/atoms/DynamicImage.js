@@ -5,7 +5,7 @@ import { AspectRatio, Image as ChakraImage} from "@chakra-ui/react"
 
 const DynamicImage = ({ aspectRatio, image, alt,  ...props }) => {
   return (
-    <AspectRatio ratio={aspectRatio}>
+    <AspectRatio ratio={aspectRatio} >
       <ChakraImage
         as={GatsbyImage}
         image={image}

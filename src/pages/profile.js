@@ -8,6 +8,7 @@ import {
 
 import Layout from "../components/templates/Layout"
 import Seo from "../components/templates/Seo"
+import HeadingOne from '../components/atoms/HeadingOne'
 import HeadingTwo from '../components/atoms/HeadingTwo'
 import HeadingThree from '../components/atoms/HeadingThree'
 import AccordionSet from '../components/molecules/AccordionSet'
@@ -25,15 +26,7 @@ const ProfilePage = () => {
         bg="white"
         padding="3.0rem 1.0rem 6.0rem"
       >
-        <Heading
-          as="h1"
-          size="xl"
-          textAlign="center"
-          color="gray.400"
-          paddingTop="2.0rem"
-        >
-          プロフィール
-        </Heading>
+        <HeadingOne title="プロフィール" />
 
         <HeadingTwo title="スキル" />
         <ProfileBox>

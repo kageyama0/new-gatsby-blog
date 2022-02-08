@@ -1,7 +1,7 @@
 import { ButtonGroup, IconButton } from '@chakra-ui/react'
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import {  FaTwitter, FaGithub} from 'react-icons/fa'
+import { FaTwitter, FaGithub } from 'react-icons/fa'
 
 export const SocialMediaLinks = ({ ...props }) => {
   const data = useStaticQuery(graphql`

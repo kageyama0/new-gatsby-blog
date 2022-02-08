@@ -1,54 +1,26 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from 'react'
+import { Box, Heading } from '@chakra-ui/react'
+import Layout from "../components/templates/Layout"
+import Seo from "../components/templates/Seo"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-// markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout>
+      <Seo title="404 Error" description="404 Error." />
+
+      <Heading
+        as="h1"
+        textDecoration="underline"
+      >
+        お探しのページが見つかりません
+      </Heading>
+      <Box>
+        URLが間違っているか、移動したり削除された記事にアクセスしようとしている可能性があります。
+      </Box>
+
+    </Layout>
   )
 }
+
 
 export default NotFoundPage
