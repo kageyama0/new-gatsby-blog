@@ -17,4 +17,4 @@ const Link = ({ to, children, ...props }) => {
   )
 }
 
-export default Link
+export default Link;
