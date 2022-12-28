@@ -1,3 +1,6 @@
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
 module.exports = {
   siteMetadata: {
     defaultTitle: "技術ブログ(仮)",
@@ -17,16 +20,21 @@ module.exports = {
   },
 
   plugins: [
-    //画像用プラグイン, https://www.gatsbyjs.com/plugins/gatsby-plugin-image
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    // google-analytics用の設定、https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        path: `${__dirname}/src/images`,
+        trackingIds: ["G-50E2BE9PW4"],
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+        },
       },
     },
+
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
 
     // アイコン用プラグイン, https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
     {
@@ -40,18 +48,35 @@ module.exports = {
       },
     },
 
-
-    // ChakraUIを使うためのプラグイン, https://chakra-ui.com/guides/integrations/with-gatsby
+    // mdx形式のファイルを変換する時の設定
+    // https://www.gatsbyjs.com/blog/2019-11-21-how-to-convert-an-existing-gatsby-blog-to-use-mdx/
     {
-      resolve: '@chakra-ui/gatsby-plugin',
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        resetCSS: true,
-        isUsingColorMode: true,
+        mdxOptions: {
+          remarkPlugins: [],
+          rehypePlugins: [],
+        },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/blog`,
       },
     },
 
-    // SEO用プラグイン, https://www.gatsbyjs.com/docs/add-page-metadata/
-    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
 
     // ファイルを読み込むためのプラグイン、ここではブログ関連のファイルを読み込んでいる。
     {
@@ -59,48 +84,27 @@ module.exports = {
       options: {
         name: `content`,
         path: `${__dirname}/blog-content`,
-      }
-    },
-
-    // mdx形式のファイルを変換する時の設定
-    // https://www.gatsbyjs.com/blog/2019-11-21-how-to-convert-an-existing-gatsby-blog-to-use-mdx/
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [".mdx", ".md"],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
       },
     },
 
-    // google-analytics用の設定、https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/
+    // chakraUI用のプラグイン
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "@chakra-ui/gatsby-plugin",
       options: {
-        trackingIds: [
-          "G-50E2BE9PW4"
+        resetCSS: true,
+      },
+    },
+
+    // コードをハイライトするためのプラグイン、https://github.com/deckgo/gatsby-remark-highlight-code
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+          },
         ],
-        pluginConfig: {
-          head: false,
-          respectDNT: true,
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
-        },
-      }
+      },
     },
   ],
-}
+};
