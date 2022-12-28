@@ -1,6 +1,7 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+// eslint-disable-next-line no-undef
 module.exports = {
   siteMetadata: {
     defaultTitle: "技術ブログ(仮)",
@@ -63,6 +64,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
+        // eslint-disable-next-line no-undef
         path: `${__dirname}/src/pages/blog`,
       },
     },
@@ -83,6 +85,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: `content`,
+        // eslint-disable-next-line no-undef
         path: `${__dirname}/blog-content`,
       },
     },
