@@ -17,7 +17,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import ProfileImage from "../images/profile.png";
 import ScenaryImage from "../images/scenary.png";
-import Link from "./Link";
+import { Link } from "./Link";
+
 
 const Layout = ({ children }) => {
   return (

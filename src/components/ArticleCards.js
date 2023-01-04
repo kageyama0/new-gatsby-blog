@@ -3,7 +3,7 @@ import React from "react";
 
 import { getImage } from "gatsby-plugin-image";
 import DynamicImage from "./DynamicImage";
-import Link from "./Link";
+import { Link } from "./Link";
 
 import { Box, Flex } from "@chakra-ui/react";
 

@@ -5,7 +5,7 @@ import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Link as ChakraLink} from "@chakra-ui/react"
 
-const Link = ({ to, children, ...props }) => {
+export const Link = ({ to, children, ...props }) => {
   return (
     <ChakraLink
       as={GatsbyLink}
@@ -17,4 +17,15 @@ const Link = ({ to, children, ...props }) => {
   )
 }
 
-export default Link;
+export const BookLink = ({ to, children, ...props }) => {
+  return (
+    <Link
+      to={to}
+      mb={10}
+      sx={{ color: "blue.500", textAlign: "center", display: "block" }}
+      {...props}
+    >
+      {children}
+    </Link>
+  )
+}
