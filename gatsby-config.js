@@ -1,6 +1,8 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+// eslint-disable-next-line no-undef
 module.exports = {
   siteMetadata: {
     defaultTitle: "技術ブログ(仮)",
@@ -53,6 +55,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        // mdx内で画像を仕様するためのプラグイン
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          }
+        ],
         mdxOptions: {
           remarkPlugins: [],
           rehypePlugins: [],
@@ -63,6 +74,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
+        // eslint-disable-next-line no-undef
         path: `${__dirname}/src/pages/blog`,
       },
     },
@@ -83,6 +95,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: `content`,
+        // eslint-disable-next-line no-undef
         path: `${__dirname}/blog-content`,
       },
     },
@@ -93,18 +106,6 @@ module.exports = {
       options: {
         resetCSS: true,
       },
-    },
-
-    // コードをハイライトするためのプラグイン、https://github.com/deckgo/gatsby-remark-highlight-code
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-highlight-code`,
-          },
-        ],
-      },
-    },
+    }
   ],
 };

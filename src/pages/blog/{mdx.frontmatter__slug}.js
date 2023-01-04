@@ -6,9 +6,48 @@ import Layout from "../../components/Layout";
 
 import { Box, Heading, List, ListItem } from "@chakra-ui/react";
 import { HeadingOne, HeadingThree, HeadingTwo } from "../../components/Heading";
+import { BookLink, Link }  from "../../components/Link";
 
 const ArticleDetail = ({ data: { mdx }, children }) => {
   console.log("children", children);
+
+  const HeadingFour = (props) => {
+    return <Heading
+      as="h4"
+      fontSize="1.2rem"
+      fontWeight="bold"
+      mt={8}
+      mb={3}
+      {...props}
+    />;
+  };
+
+  const Space = (props) => {
+    return <Box {...props} />
+  };
+
+  const MdxLink = (props) => {
+    return <Link
+      color="blue.500"
+      _hover={{ color: "secondary" }}
+      {...props}
+    />;
+  };
+
+  const MdxList = (props) => {
+    return <List
+      sx={{ listStyle: "disc" }}
+      {...props}
+    />;
+  };
+
+  const MdxListItem = (props) => {
+    return <ListItem
+      mb={2}
+      ml={6}
+      {...props}
+    />;
+  };
 
   const Code = (props) => {
     return (
@@ -41,10 +80,14 @@ const ArticleDetail = ({ data: { mdx }, children }) => {
     h1: HeadingOne,
     h2: HeadingTwo,
     h3: HeadingThree,
-    ul: List,
-    li: ListItem,
+    h4: HeadingFour,
+    a: MdxLink,
+    ul: MdxList,
+    li: MdxListItem,
     code: Code,
     blockquote: BlockQuote,
+    BookLink: BookLink,
+    Space: Space,
   };
 
   return (
