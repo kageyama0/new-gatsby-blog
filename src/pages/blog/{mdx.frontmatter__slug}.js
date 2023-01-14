@@ -30,6 +30,7 @@ const ArticleDetail = ({ data: { mdx }, children }) => {
     return <Link
       color="blue.500"
       _hover={{ color: "secondary" }}
+      to={props.href}
       {...props}
     />;
   };
@@ -94,10 +95,9 @@ const ArticleDetail = ({ data: { mdx }, children }) => {
     <Layout>
       <article>
         <Box backgroundColor="white" padding="3.2rem 1.6rem">
-          <Heading as="h1">{mdx.frontmatter.title}</Heading>
-
+          <HeadingOne>{mdx.frontmatter.title}</HeadingOne>
           <Box marginTop="1.6rem">
-            <Box>
+            <Box textAlign="center">
               <Box color="gray">作成日 : {mdx.frontmatter.date}</Box>
               {mdx.frontmatter.update && (
                 <Box color="gray">更新日 : {mdx.frontmatter.update}</Box>
