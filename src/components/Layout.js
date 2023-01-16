@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
       <Header />
 
       <main>
-        <Box margin="1rem auto">
+        <Box margin="1rem auto" lineHeight="2rem">
           <Grid
             templateColumns={{ base: "1fr", lg: "5fr minmax(180px, 2fr)" }}
             gap={{ base: "0", md: "6" }}
