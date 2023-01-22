@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import * as React from "react";
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import Layout from "../components/Layout";
@@ -10,11 +10,10 @@ import hel_font from "../fonts/helvetiker_regular.typeface.json";
 
 extend({ TextGeometry });
 
-
 const Sphere = ({ scale, position }) => {
   const mesh = useRef({});
-    const [hovered, setHover] = useState(false);
-    const [active, setActive] = useState(false);
+  const [hovered, setHover] = useState(false);
+  const [active, setActive] = useState(false);
   const X = position[0];
   const Y = position[1];
   const Z = position[2];
@@ -57,9 +56,9 @@ const Sphere = ({ scale, position }) => {
   return (
     <mesh
       scale={hovered ? 2 : 1}
-      onClick={(e) => setActive(!active)}
-      onPointerOver={(e) => setHover(true)}
-      onPointerOut={(e) => setHover(false)}
+      onClick={() => setActive(!active)}
+      onPointerOver={() => setHover(true)}
+      onPointerOut={() => setHover(false)}
       castShadow
       position={position}
       ref={mesh}
