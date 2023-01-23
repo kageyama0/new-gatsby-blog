@@ -44,7 +44,7 @@ module.exports = {
       options: {
         name: `GatsbyJS`,
         short_name: `GatsbyJS`,
-        icon: `src/images/favicon.png`,
+        icon: `src/images/favicon.ico`,
         start_url: `/`,
         display: `standalone`,
       },
