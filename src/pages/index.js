@@ -1,5 +1,5 @@
-import * as React from "react";
 import { graphql } from "gatsby";
+import * as React from "react";
 
 import ArticleCards from "../components/ArticleCards";
 import Layout from "../components/Layout";
@@ -15,12 +15,16 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+    allMdx(
+      filter: { frontmatter: { is_displayed_on_the_home: { eq: true } } }
+      sort: { frontmatter: { created_at: DESC } }
+    ) {
       nodes {
         frontmatter {
           title
-          date(formatString: "MMMM D, YYYY")
+          created_at(formatString: "MMMM D, YYYY")
           slug
+          is_displayed_on_the_home
           thumbnail_alt
           thumbnail {
             childImageSharp {

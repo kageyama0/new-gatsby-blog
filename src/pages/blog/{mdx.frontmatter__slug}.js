@@ -98,9 +98,9 @@ const ArticleDetail = ({ data: { mdx }, children }) => {
           <HeadingOne>{mdx.frontmatter.title}</HeadingOne>
           <Box marginTop="1.6rem">
             <Box textAlign="center">
-              <Box color="gray">作成日 : {mdx.frontmatter.date}</Box>
-              {mdx.frontmatter.update && (
-                <Box color="gray">更新日 : {mdx.frontmatter.update}</Box>
+              <Box color="gray">作成日 : {mdx.frontmatter.created_at}</Box>
+              {mdx.frontmatter.updated_at && (
+                <Box color="gray">更新日 : {mdx.frontmatter.updated_at}</Box>
               )}
             </Box>
 
@@ -121,8 +121,8 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       frontmatter {
         title
-        date(formatString: "YYYY年 M月 D日")
-        update(formatString: "YYYY年 M月 D日")
+        created_at(formatString: "YYYY年 M月 D日")
+        updated_at(formatString: "YYYY年 M月 D日")
       }
     }
   }

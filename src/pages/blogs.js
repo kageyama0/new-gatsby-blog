@@ -15,11 +15,11 @@ const BlogsPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+    allMdx(sort: { frontmatter: { created_at: DESC } }) {
       nodes {
         frontmatter {
           title
-          date(formatString: "MMMM D, YYYY")
+          created_at(formatString: "MMMM D, YYYY")
           slug
           thumbnail_alt
           thumbnail {

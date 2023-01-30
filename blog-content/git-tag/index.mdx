@@ -1,20 +1,23 @@
 ---
 title: $ git tagって知ってます？
-date: "2020-06-10"
+created_at: "2020-06-10"
 thumbnail: ./git-tag.png
 thumbnail_alt: "git tag"
 slug: git-tag
+is_displayed_on_the_home: false
 ---
 
 ## やったこと & 遭遇したエラー
-ブランチ名をtagにして作業をしていた。
+
+ブランチ名を tag にして作業をしていた。
+
 ```bash
 $ git branch
   develop
   * tag
 ```
 
-そして、コードを描き終えたので、add -> commit -> pushしようとしたらエラーが発生しました!
+そして、コードを描き終えたので、add -> commit -> push しようとしたらエラーが発生しました!
 
 ```bash
 $ git add -A
@@ -23,17 +26,16 @@ $ git push origin tag
   fatal: tag shorthand without <tag>
 ```
 
-実は、gitには`$ git tag`っていう機能があって、それを使おうとしているのか？と勘違いされてるみたいです。
-
+実は、git には`$ git tag`っていう機能があって、それを使おうとしているのか？と勘違いされてるみたいです。
 
 ## 解決方法
 
-tag-functionというブランチを新たに作ってpushした
+tag-function というブランチを新たに作って push した
 
 ```bash
-$ git checkout -b tag-function  
-$ git add -A  
-$ git commit -m "comment"  
+$ git checkout -b tag-function
+$ git add -A
+$ git commit -m "comment"
 $ git push origin tag-function
 ```
 
@@ -43,38 +45,37 @@ $ git push origin tag-function
 
 [>> 詳しいことは公式ドキュメントに書いてます!](https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E5%9F%BA%E6%9C%AC-%E3%82%BF%E3%82%B0)
 
-
 ### タグ作成
 
-  - 最新のcommitにタグ付け
+- 最新の commit にタグ付け
+
+```
+$ git tag <tag-name>
+```
+
+- 最新の commit にタグとコメントを付ける
 
   ```
-  $ git tag <tag-name>
+  $ git tag -a <tag-name> -m "comment"
   ```
 
-  - 最新のcommitにタグとコメントを付ける
+- 最新でない commit にもタグ付けできる。
 
-    ```
-    $ git tag -a <tag-name> -m "comment"
-    ```
+  ```
+  $ git tag -a <tag-name> <commit-hash> -m "message"
+  ```
 
-  - 最新でないcommitにもタグ付けできる。
-
-    ```
-    $ git tag -a <tag-name> <commit-hash> -m "message"
-    ```
-
-ここだけの話、**コミットID**が何か分からないという方は、下記のコマンドを打ってみてください。
+ここだけの話、**コミット ID**が何か分からないという方は、下記のコマンドを打ってみてください。
 
 ```
 $ git log
 ```
 
-logの一番上にある文字列がcommit commit idです。
+log の一番上にある文字列が commit commit id です。
 
-今までやってきたcommitにランダムな文字列が与えれています。
+今までやってきた commit にランダムな文字列が与えれています。
 
-その **コミットID** を指定して、様々な操作が行えます。
+その **コミット ID** を指定して、様々な操作が行えます。
 
 ### タグ表示
 
@@ -84,13 +85,13 @@ logの一番上にある文字列がcommit commit idです。
 $ git tag
 ```
 
-- 特定の文字列を含むタグのみ表示。下記コマンドは *v1.0* を含むタグを表示したい場合
+- 特定の文字列を含むタグのみ表示。下記コマンドは _v1.0_ を含むタグを表示したい場合
 
 ```
 $ git tag -l "v1.0"
 ```
 
-- 最新でないcommitにもタグ付けできる。
+- 最新でない commit にもタグ付けできる。
 
 ```
 $ git tag -a <tag-name> <commit-hash> -m "message"
@@ -104,26 +105,24 @@ $ git tag -d <tag-name>
 
 ### タグの名前変更
 
-一つのcommitに複数のtagをつけることができるので、古い名前のタグがついているやつに新しい名前をつけてから古いタグを削除すればいいという感じです。
+一つの commit に複数の tag をつけることができるので、古い名前のタグがついているやつに新しい名前をつけてから古いタグを削除すればいいという感じです。
 
 ```
 $ git tag <new-name> <old-name>
 $ git tag -d <old-name>
 ```
 
-
-
-
 ## 「結局、いつ使うのこれ...」
 
-と思いますよね...僕は思いましたw
+と思いますよね...僕は思いました w
 
 公式ドキュメントには、以下のように書かれていました。
+
 > 歴史上の重要なポイントに印をつけることができます。
 >
-> よくあるのは、この機能を (v 1.0など) リリースポイントとして使うことです。
+> よくあるのは、この機能を (v 1.0 など) リリースポイントとして使うことです。
 
-要するに、開発しているサービスにおいて、**大きな変更のあったcommitにタグという形で印を付けて**、管理しやすくするためのものですね!
+要するに、開発しているサービスにおいて、**大きな変更のあった commit にタグという形で印を付けて**、管理しやすくするためのものですね!
 
 個人開発ではまず使う必要はなさそうですが、業務では使うこともあると思います。
 
